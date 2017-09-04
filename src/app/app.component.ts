@@ -25,6 +25,12 @@ private checkPatterns(value: any , pattern: RegExp): boolean {
     return false;
 }
 
+addStudent(regObject){
+ console.log(regObject.value);
+
+}
+
+
 addStudentEntry(): Boolean{
 this.printing = false;
 const stringPattern = /^[A-z\s]+$/;
@@ -68,4 +74,6 @@ this.studYr = null;
 
 
 }
+
+
 }

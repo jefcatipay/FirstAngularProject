@@ -1,25 +1,47 @@
-<div>
-  <label>Student Number</label> <input type="text" [(ngModel)]
-  ="studNo"><br>
-  <label>Student First Name</label> <input type="text" [(ngModel)]
-  ="studFname"><br>
-  <label>Student Last Name</label> <input type="text" [(ngModel)]
-  ="studLname"><br>
-  <label>Student Program</label> <input type="text" [(ngModel)]
-  ="studProg"><br>
-  <label>Student Year</label> <input type="text" [(ngModel)]
-  ="studYr"><br>
+
+<form(ngSubmit)="addSudentEntry()" #regForm="ngForm")>
+
+<div id="student-data">
+  <div = class="student-form">
+
+  <label for="Student_Number">Student Number</label> 
+  <input type="text" id="Student_Number"
+  
+  class="form-control"
+  ngModel
+  name="Student_Number"
+  required
+  pattern="[0-9]+"
+  #Student_Number="ngModel"
+  ><br>
+
+  <label for="First_Name">Student First Name</label> 
+  <input type="text" [(ngModel)]="studFname"><br>
+
+  <label for="Last_Name">Student Last Name</label>
+  <input type="text" [(ngModel)] ="studLname"><br>
+
+  <label for="Student_Program">Student Program</label> 
+  <input type="text" [(ngModel)]="studProg"><br>
+
+  <label>Student Year</label>
+  <input type="text" [(ngModel)]="studYr"><br>
+
+  </div>
 </div>
 
+</form>
+
 <div id="options">
-  <button id= "addStudents"(click)="addSudentEntry()">
+  <button class="btn btn-primary" type="Submit">
     Add Student Entry </button>
-<button id = "listStudents"(click)="listStudents()">
+<button id = "listStudents">
     List Students </button>
   </div>
   <div>
 {{mesages}}
   </div>
+
 <div *ngIf ="printing">
   <table>
     <thead>
